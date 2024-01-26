@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 
 const getData = async (category: string) => {
   const res = await fetch(
-    `http://localhost:3000/api/products?cat=${category}`,
+    `${process.env.NEXTAUTH_URL}/api/products?cat=${category}`,
     {
       cache: "no-store",
     }

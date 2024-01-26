@@ -21,13 +21,10 @@ const AddUser = () => {
     const formData = new FormData();
     formData.append("file", file!);
     formData.append("upload_preset", "slicesPizzeria");
-    const uploadResponse = await fetch(
-      "https://api.cloudinary.com/v1_1/dx3vungqy/image/upload",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
+    const uploadResponse = await fetch(`${process.env.CLOUDINARY_URL}`, {
+      method: "POST",
+      body: formData,
+    });
     const uploadedImageData = await uploadResponse.json();
     return uploadedImageData.url;
   };
@@ -35,7 +32,7 @@ const AddUser = () => {
   const onSubmit = async () => {
     try {
       const url = await upload();
-      const res = await fetch("http://localhost:3000/api/user", {
+      const res = await fetch(`${process.env.NEXTAUTH_URL}/api/user`, {
         method: "POST",
         body: JSON.stringify({
           image: url,
@@ -61,7 +58,7 @@ const AddUser = () => {
   const [updateduser, setUpdatedUser] = useState(["loading..."]);
   useEffect(() => {
     async function getUserInfo() {
-      const response = await fetch("http://localhost:3000/api/user", {
+      const response = await fetch(`${process.env.NEXTAUTH_URL}/api/user`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -201,4 +198,3 @@ const AddUser = () => {
 };
 
 export default AddUser;
-// 1/2 lb blackened angus burger, Lettuce, Tomato, Onion, Bleu Cheese Crumbles w/Fries

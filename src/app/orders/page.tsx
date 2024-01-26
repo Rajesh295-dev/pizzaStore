@@ -21,14 +21,14 @@ const OrdersPage = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
-      fetch("http://localhost:3000/api/orders").then((res) => res.json()),
+      fetch(`${process.env.NEXTAUTH_URL}/api/orders`).then((res) => res.json()),
   });
 
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: ({ id, status }: { id: string; status: string }) => {
-      return fetch(`http://localhost:3000/api/orders/${id}`, {
+      return fetch(`${process.env.NEXTAUTH_URL}/api/orders/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const OrdersPage = () => {
   const handleDelete = async (id: string) => {
     console.log(id);
     try {
-      const res = await fetch(`http://localhost:3000/api/orders/${id}`, {
+      const res = await fetch(`${process.env.NEXTAUTH_URL}/api/orders/${id}`, {
         method: "DELETE",
       });
 

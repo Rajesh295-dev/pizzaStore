@@ -1,34 +1,5 @@
 "use client";
-// import React, { useEffect } from "react";
-// import Image from "next/image";
-// import { useSession } from "next-auth/react";
 
-// function UserProfileImg() {
-//   const { data: session, status } = useSession();
-
-//   if (session?.user) {
-//     return (
-//       <>
-//         {session?.user && (
-//           <div className="relative w-8 h-8 rounded-md">
-//             <Image
-//               src={session.user.image}
-//               alt=""
-//               fill
-//               sizes="100%"
-//               className="object-contain"
-//             />
-//           </div>
-//         )}
-//       </>
-//     );
-//   }
-// }
-
-// export default UserProfileImg;
-
-// Import necessary modules and components
-import React, { useEffect } from "react";
 import Image from "next/image";
 
 import { useSession } from "next-auth/react";

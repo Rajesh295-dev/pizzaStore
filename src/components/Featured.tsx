@@ -2,10 +2,9 @@ import React from "react";
 import Image from "next/image";
 import { ProductType } from "@/types/types";
 import Link from "next/link";
-//import { featuredProducts } from "@/data";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/products", {
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products`, {
     cache: "no-store",
   });
 

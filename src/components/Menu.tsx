@@ -37,67 +37,25 @@ const Menu = () => {
       )}
 
       {open && (
-        // <div className="bg-red-500 text-white absolute left-0 top-24 w-full h-[calc(100vh-6rem)] flex flex-col gap-8 items-center justify-center  text-3xl z-10">
-        //   {links.map((item) => (
-        //     <Link href={item.url} key={item.id} onClick={() => setOpen(false)}>
-        //       {item.title}
-        //     </Link>
-        //   ))}
-        //   {!user ? (
-        //     <Link href="login" onClick={() => setOpen(false)}>
-        //       Login
-        //     </Link>
-        //   ) : (
-        //     <Link href="/orders" onClick={() => setOpen(false)}>
-        //       Orders
-        //     </Link>
-        //   )}
-        //   <Link href="/cart" onClick={() => setOpen(false)}>
-        //     <CartIcon />
-        //   </Link>
-        //   <UserProfileImg />
-        // </div>
-
-        <div className="bg-red-500 text-white absolute left-0 top-24 w-full h-[calc(100vh-6rem)] flex flex-col gap-8 items-center justify-center text-3xl z-10">
+        <div className="bg-red-500 text-white absolute left-0 top-24 w-full h-[calc(100vh-6rem)] flex flex-col gap-8 items-center justify-center  text-3xl z-10">
           {links.map((item) => (
-            <div key={item.id}>
-              <Link
-                className="nav-link"
-                href={item.url}
-                onClick={() => setOpen(false)}
-              >
-                {item.title}
-              </Link>
-            </div>
-          ))}
-
-          {!user ? (
-            <div>
-              <Link href="login" onClick={() => setOpen(false)}>
-                Login
-              </Link>
-            </div>
-          ) : (
-            <div>
-              <Link href="/orders" onClick={() => setOpen(false)}>
-                Orders
-              </Link>
-            </div>
-          )}
-
-          {/* <div>
-            <Link href="/cart" onClick={() => setOpen(false)}>
-              <CartIcon />
+            <Link href={item.url} key={item.id} onClick={() => setOpen(false)}>
+              {item.title}
             </Link>
-          </div> */}
-
+          ))}
+          {!user ? (
+            <Link href="login" onClick={() => setOpen(false)}>
+              Login
+            </Link>
+          ) : (
+            <Link href="/orders" onClick={() => setOpen(false)}>
+              Orders
+            </Link>
+          )}
           <div onClick={() => setOpen(false)}>
             <CartIcon />
           </div>
-
-          <div>
-            <UserProfileImg />
-          </div>
+          <UserProfileImg />
         </div>
       )}
     </div>

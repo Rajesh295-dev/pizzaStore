@@ -1,7 +1,6 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-// import { NextResponse } from "next/server";
 import { useState } from "react";
 
 type Inputs = {
@@ -43,7 +42,7 @@ const CashPay: React.FC<CashPayProps> = ({
       setInputs(updatedInputs);
 
       const res = await fetch(
-        `http://localhost:3000/api/cashPayment/${updatedInputs.newOrderId}`,
+        `${process.env.NEXTAUTH_URL}/api/cashPayment/${updatedInputs.newOrderId}`,
         {
           method: "POST",
           headers: {

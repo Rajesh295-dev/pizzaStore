@@ -18,19 +18,17 @@ type Inputs = {
 //   title: string;
 //   additionalPrice: number;
 // };
+// "https://api.cloudinary.com/v1_1/dx3vungqy/image/upload"
 
 const AddCategory = () => {
   const upload = async () => {
     const formData = new FormData();
     formData.append("file", file!);
     formData.append("upload_preset", "slicesPizzeria");
-    const uploadResponse = await fetch(
-      "https://api.cloudinary.com/v1_1/dx3vungqy/image/upload",
-      {
-        method: "POST",
-        body: formData,
-      }
-    );
+    const uploadResponse = await fetch(`${process.env.CLOUDINARY_URL}`, {
+      method: "POST",
+      body: formData,
+    });
     const uploadedImageData = await uploadResponse.json();
     return uploadedImageData.url;
   };
@@ -38,7 +36,7 @@ const AddCategory = () => {
   const onSubmit = async () => {
     try {
       const url = await upload();
-      const res = await fetch("http://localhost:3000/api/categories", {
+      const res = await fetch(`${process.env.NEXTAUTH_URL}/api/categories`, {
         method: "POST",
         body: JSON.stringify({
           img: url,
@@ -59,12 +57,15 @@ const AddCategory = () => {
   const [catColor, setCatColor] = useState(["loading..."]);
   useEffect(() => {
     async function getCatColor() {
-      const response = await fetch("http://localhost:3000/api/categories", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `${process.env.NEXTAUTH_URL}/api/categories`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const color = await response.json();
       ///mapping to find only one boject in our case it is color name
       const categoryBgColor = color.map(

@@ -33,7 +33,8 @@ const AddPage = () => {
     formData.append("file", file!);
     formData.append("upload_preset", "slicesPizzeria");
     const uploadResponse = await fetch(
-      "https://api.cloudinary.com/v1_1/dx3vungqy/image/upload",
+      `${process.env.CLOUDINARY_URL}`,
+
       {
         method: "POST",
         body: formData,
@@ -46,7 +47,7 @@ const AddPage = () => {
   const onSubmit = async () => {
     try {
       const url = await upload();
-      const res = await fetch("http://localhost:3000/api/products", {
+      const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products`, {
         method: "POST",
         body: JSON.stringify({
           img: url,
@@ -68,12 +69,15 @@ const AddPage = () => {
   // const [catList, setCatList] = useState<string[]>(["loading..."]);
   useEffect(() => {
     async function getCatSlug() {
-      const response = await fetch("http://localhost:3000/api/categories", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        `${process.env.NEXTAUTH_URL}/api/categories`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       const catSlug = await response.json();
       const slugTitles = catSlug.map(
         (category: { slug: string }) => category.slug

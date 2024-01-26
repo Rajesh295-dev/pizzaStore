@@ -29,7 +29,7 @@ const CartPage = () => {
     } else {
       try {
         const method = paymentMethod === "card" ? "card" : "cash";
-        const res = await fetch("http://localhost:3000/api/orders", {
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/orders`, {
           method: "POST",
           headers: { "Content-type": "application/json" },
           body: JSON.stringify({
