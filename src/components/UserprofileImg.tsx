@@ -24,7 +24,7 @@ function UserProfileImg() {
           // Render a fallback content if the user's image is not available
           <div className="relative w-8 h-8 md:w-5 md:h-5 rounded-full">
             <Image
-              src="/noAvatar.png "
+              src="/noAvatar.png"
               alt=""
               fill
               sizes="100%"

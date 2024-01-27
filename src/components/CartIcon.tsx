@@ -16,12 +16,12 @@ function CartIcon() {
 
   return (
     //detemine if its admin or customer
-    // <Link href={session?.user.isAdmin ? "/addCategory" : "/cart"}>
+
     <Link href={session?.user ? "/cart" : ""}>
       <div className=" flex items-center gap-4">
         <div className="relative w-8 h-8 md:w-5 md:h-5">
           <Image
-            src="/cart.png "
+            src="/cart.png"
             alt=""
             fill
             sizes="100%"
