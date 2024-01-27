@@ -8,7 +8,7 @@ const data = [
     id: 1,
 
     title: "Slices into Happiness: Where Every Bite is a Delight!",
-    image: "/slide1.png",
+    image: "/firstSlide.png",
   },
 
   {
