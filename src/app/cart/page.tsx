@@ -40,20 +40,40 @@ const CartPage = () => {
             method,
           }),
         });
-        const data = await res.json();
 
-        console.log("new order id", data.id);
+        if (res.ok) {
+          const data = await res.json();
+          console.log("new order id", data.id);
 
-        if (data.method === "card") {
-          router.push(`pay/${data.id}`);
+          if (data.method === "card") {
+            router.push(`pay/${data.id}`);
+          } else {
+            setOrderId(data.id);
+            setCash(true);
+          }
         } else {
-          setOrderId(data.id);
-          setCash(true);
+          // Handle non-successful response
+          console.error("Error:", res.statusText);
         }
-        // router.push(`pay/${data.id}`);
-      } catch (err) {
-        console.log(err);
+      } catch (error) {
+        // Handle fetch or JSON parsing errors
+        console.error("Error during fetch or JSON parsing:", error);
       }
+
+      //   const data = await res.json();
+
+      //   console.log("new order id", data.id);
+
+      //   if (data.method === "card") {
+      //     router.push(`pay/${data.id}`);
+      //   } else {
+      //     setOrderId(data.id);
+      //     setCash(true);
+      //   }
+      //   // router.push(`pay/${data.id}`);
+      // } catch (err) {
+      //   console.log(err);
+      // }
     }
   };
 
