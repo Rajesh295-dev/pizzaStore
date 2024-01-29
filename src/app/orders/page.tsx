@@ -21,7 +21,7 @@ const OrdersPage = () => {
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
-      fetch(`https://${process.env.NEXTAUTH_URL}/api/orders`).then((res) =>
+      fetch(`https://${process.env.api_URL}/api/orders`).then((res) =>
         res.json()
       ),
   });
