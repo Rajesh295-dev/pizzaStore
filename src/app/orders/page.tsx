@@ -17,11 +17,11 @@ const OrdersPage = () => {
   if (status === "unauthenticated") {
     router.push("/");
   }
-
+  const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
-      fetch(`${process.env.NEXTAUTH_URL}/api/orders`).then((res) => res.json()),
+      fetch(`${NEXTAUTH_URL}/api/orders`).then((res) => res.json()),
   });
 
   const queryClient = useQueryClient();
@@ -53,6 +53,7 @@ const OrdersPage = () => {
 
   const handleDelete = async (id: string) => {
     console.log(id);
+
     try {
       const res = await fetch(`${process.env.NEXTAUTH_URL}/api/orders/${id}`, {
         method: "DELETE",
