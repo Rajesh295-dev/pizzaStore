@@ -22,6 +22,7 @@ const CartPage = () => {
   }, []);
 
   const [orderId, setOrderId] = useState<string>("");
+  const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
 
   const handleCheckout = async (paymentMethod: paymentMethod) => {
     if (!session) {
@@ -29,7 +30,7 @@ const CartPage = () => {
     } else {
       try {
         const method = paymentMethod === "card" ? "card" : "cash";
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/orders`, {
+        const res = await fetch(`${NEXTAUTH_URL}/api/orders`, {
           method: "POST",
           headers: { "Content-type": "application/json" },
           body: JSON.stringify({

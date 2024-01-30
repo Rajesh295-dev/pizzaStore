@@ -16,10 +16,9 @@ export const GET = async (req: NextRequest) => {
           userEmail: session.user.email!,
         },
       });
-      
+
       return new NextResponse(JSON.stringify(orders), { status: 200 });
     } catch (err) {
-      
       return new NextResponse(
         JSON.stringify({ message: "Something went wrong!" }),
         { status: 500 }
@@ -34,7 +33,6 @@ export const GET = async (req: NextRequest) => {
 };
 
 //create order
-
 export const POST = async (req: NextRequest) => {
   const session = await getAuthSession();
   if (session) {
@@ -45,7 +43,6 @@ export const POST = async (req: NextRequest) => {
         return new NextResponse(JSON.stringify(order), { status: 201 });
       }
     } catch (err) {
-      
       return new NextResponse(
         JSON.stringify({ message: "Something went wrong!" }),
         { status: 500 }
