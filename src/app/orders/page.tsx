@@ -17,11 +17,12 @@ const OrdersPage = () => {
   if (status === "unauthenticated") {
     router.push("/");
   }
-  // const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
-  const api_URL = process.env.NEXTAUTH_URL;
+  const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
+  // const api_URL = process.env.NEXTAUTH_URL;
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
-    queryFn: () => fetch(`${api_URL}/api/orders`).then((res) => res.json()),
+    queryFn: () =>
+      fetch(`${NEXTAUTH_URL}/api/orders`).then((res) => res.json()),
   });
 
   const queryClient = useQueryClient();
