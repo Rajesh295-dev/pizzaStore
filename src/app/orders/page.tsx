@@ -92,7 +92,8 @@ const OrdersPage = () => {
   return (
     <div className="p-4 lg:px-20 xl:px-40 overflow-x-auto">
       <div className="h-12 bg-green-500 text-white px-4 flex items-center justify-center text-sm md:text-base cursor-pointer">
-        Your order has been placed Successfully!
+        {/* Your order has been placed Successfully! */}
+        {message}
       </div>
       <table className="w-full border-separate border-spacing-3">
         <thead>
