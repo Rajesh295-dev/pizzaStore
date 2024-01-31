@@ -27,6 +27,9 @@ type Option = {
   additionalPrice: number;
 };
 
+// CLOUDINARY_URL_NAME = dx3vungqy;
+// CLOUDINARY_URL="https://api.cloudinary.com/v1_1/dx3vungqy/image/upload"
+
 const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
 const AddPage = () => {
   const upload = async () => {

@@ -18,19 +18,19 @@ const OrdersPage = () => {
     router.push("/");
   }
 
-  const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
+  //const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
   // const api_URL = process.env.NEXTAUTH_URL;
   const { isLoading, error, data } = useQuery({
     queryKey: ["orders"],
     queryFn: () =>
-      fetch(`${NEXTAUTH_URL}/api/orders`).then((res) => res.json()),
+      fetch(`${process.env.NEXTAUTH_URL}/api/orders`).then((res) => res.json()),
   });
 
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: ({ id, status }: { id: string; status: string }) => {
-      return fetch(`${NEXTAUTH_URL}/api/orders/${id}`, {
+      return fetch(`${process.env.NEXTAUTH_URL}/api/orders/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -57,7 +57,7 @@ const OrdersPage = () => {
     // console.log(id);
 
     try {
-      const res = await fetch(`${NEXTAUTH_URL}/api/orders/${id}`, {
+      const res = await fetch(`${process.env.NEXTAUTH_URL}/api/orders/${id}`, {
         method: "DELETE",
       });
 
