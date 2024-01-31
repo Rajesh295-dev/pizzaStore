@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import CartIcon from "./CartIcon";
 import UserProfileImg from "./UserprofileImg";
+import { signOut } from "next-auth/react";
 
 const links = [
   { id: 1, title: "Homepage", url: "/" },
@@ -44,9 +45,15 @@ const Menu = () => {
             </Link>
           ))}
           {user !== undefined && user !== null ? (
-            <Link href="/orders" onClick={() => setOpen(false)}>
-              Orders
-            </Link>
+            <div className="flex flex-col gap-1">
+              <Link href="/orders" onClick={() => setOpen(false)}>
+                Orders
+              </Link>
+
+              <span className="ml-4 cursor-pointer" onClick={() => signOut()}>
+                Logout
+              </span>
+            </div>
           ) : (
             <Link href="login" onClick={() => setOpen(false)}>
               Login
