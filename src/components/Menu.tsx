@@ -55,7 +55,7 @@ const Menu = () => {
                   Orders
                 </Link>
                 <span className="ml-4 cursor-pointer" onClick={() => signOut()}>
-                  <Link href="/">Logout</Link>Logout
+                  <Link href="/">Logout</Link>
                 </span>
               </div>
             ) : (
@@ -64,24 +64,6 @@ const Menu = () => {
               </Link>
             )}
           </div>
-
-          {/* <div>
-            {user ? (
-              <div className="flex flex-col gap-8">
-                <Link href="/orders" onClick={() => setOpen(false)}>
-                  Orders
-                </Link>
-
-                <span className="cursor-pointer" onClick={() => signOut()}>
-                  Logout
-                </span>
-              </div>
-            ) : (
-              <Link href="/login" onClick={() => setOpen(false)}>
-                Login
-              </Link>
-            )}
-          </div> */}
 
           <div onClick={() => setOpen(false)}>
             <CartIcon />
