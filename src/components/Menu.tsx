@@ -45,7 +45,25 @@ const Menu = () => {
             </Link>
           ))}
 
-          {user !== undefined && user !== null ? (
+          <div>
+            {user ? (
+              <div className="flex flex-col gap-8">
+                <Link href="/orders" onClick={() => setOpen(false)}>
+                  Orders
+                </Link>
+
+                <span className="cursor-pointer" onClick={() => signOut()}>
+                  Logout
+                </span>
+              </div>
+            ) : (
+              <Link href="/login" onClick={() => setOpen(false)}>
+                Login
+              </Link>
+            )}
+          </div>
+
+          {/* {user !== undefined && user !== null ? (
             <div className="flex flex-col gap-8">
               <Link href="/orders" onClick={() => setOpen(false)}>
                 Orders
@@ -59,7 +77,7 @@ const Menu = () => {
             <Link href="login" onClick={() => setOpen(false)}>
               Login
             </Link>
-          )}
+          )} */}
 
           <div onClick={() => setOpen(false)}>
             <CartIcon />
