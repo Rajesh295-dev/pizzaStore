@@ -17,7 +17,7 @@ const OrdersPage = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setMessage("Here is the status of your order!");
-    }, 5000);
+    }, 3000);
 
     // Clean up the timeout to avoid memory leaks
     return () => clearTimeout(timeoutId);
@@ -90,7 +90,7 @@ const OrdersPage = () => {
   //add handleDelete function for item.id
 
   return (
-    <div className="p-4 lg:px-20 xl:px-40 overflow-x-auto">
+    <div className="p-4 lg:px-20 xl:px-40 ">
       <div className="h-12 bg-green-500 text-white px-4 flex items-center justify-center text-sm md:text-base cursor-pointer">
         {/* Your order has been placed Successfully! */}
         {message}
@@ -128,7 +128,7 @@ const OrdersPage = () => {
                   >
                     <input
                       placeholder={item.status}
-                      className="p-2  ring-1 ring-red-100 rounded-md outline-none"
+                      className="p-2  outline-none border border-red-200 rounded-md text-sm md:text-base"
                     />
                     <button className="bg-red-400 p-2 rounded-full">
                       <Image src="/edit.png" alt="" width={20} height={20} />
