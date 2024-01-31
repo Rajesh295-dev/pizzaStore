@@ -17,7 +17,7 @@ const OrdersPage = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setMessage("Here is the status of your order!");
-    }, 10000);
+    }, 5000);
 
     // Clean up the timeout to avoid memory leaks
     return () => clearTimeout(timeoutId);
@@ -128,7 +128,7 @@ const OrdersPage = () => {
                   >
                     <input
                       placeholder={item.status}
-                      className="p-2  border border-red-100 rounded-md outline-none"
+                      className="p-2  ring-1 ring-red-100 rounded-md outline-none"
                     />
                     <button className="bg-red-400 p-2 rounded-full">
                       <Image src="/edit.png" alt="" width={20} height={20} />
