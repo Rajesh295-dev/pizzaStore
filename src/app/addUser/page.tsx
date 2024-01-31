@@ -42,7 +42,7 @@ const AddUser = () => {
 
       const responseData = await res.json();
 
-      console.log("thisssss", responseData);
+      // console.log("thisssss", responseData);
       reset();
       setFile(null);
 
