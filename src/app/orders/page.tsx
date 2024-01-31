@@ -17,7 +17,7 @@ const OrdersPage = () => {
   useEffect(() => {
     const timeoutId = setTimeout(() => {
       setMessage("Here is the status of your order!");
-    }, 60000); // 60,000 milliseconds = 1 minute
+    }, 10000);
 
     // Clean up the timeout to avoid memory leaks
     return () => clearTimeout(timeoutId);
@@ -138,10 +138,10 @@ const OrdersPage = () => {
               ) : (
                 <td className="py-6 px-1">{item.status}</td>
               )}
-              <td className="flex items-center justify-center">
+              <td>
                 <button
                   onClick={() => handleDelete(item.id)}
-                  className="bg-red-400 rounded-full"
+                  className="bg-red-400 ml-3 p-3 rounded-full"
                 >
                   <Image src="/delete.png" alt="" width={20} height={20} />
                 </button>
