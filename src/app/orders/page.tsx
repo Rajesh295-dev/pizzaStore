@@ -128,7 +128,7 @@ const OrdersPage = () => {
                   >
                     <input
                       placeholder={item.status}
-                      className="p-2  outline-none border border-red-200 rounded-md text-sm md:text-base"
+                      className="p-2 w-full md:w-auto outline-none border border-red-200 rounded-md text-sm md:text-base"
                     />
                     <button className="bg-red-400 p-2 rounded-full">
                       <Image src="/edit.png" alt="" width={20} height={20} />
@@ -143,7 +143,7 @@ const OrdersPage = () => {
                   onClick={() => handleDelete(item.id)}
                   className="bg-red-400 ml-3 p-3 rounded-full"
                 >
-                  <Image src="/delete.png" alt="" width={20} height={20} />
+                  <Image src="/delete.png" alt="" width={15} height={15} />
                 </button>
               </td>
             </tr>
