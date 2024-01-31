@@ -127,7 +127,7 @@ const OrdersPage = () => {
               <td>
                 <button
                   onClick={() => handleDelete(item.id)}
-                  className="bg-red-400 p-3 ml-4 rounded-full  "
+                  className="bg-red-400 flex items-center justify-center rounded-full  "
                 >
                   <Image src="/delete.png" alt="" width={20} height={20} />
                 </button>
