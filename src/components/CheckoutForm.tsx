@@ -9,7 +9,7 @@ import {
 } from "@stripe/react-stripe-js";
 import AdressForm from "./AdressForm";
 
-const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
+//const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
 
 const CheckoutForm = () => {
   const stripe = useStripe();
@@ -66,7 +66,7 @@ const CheckoutForm = () => {
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: `${NEXTAUTH_URL}/success`,
+        return_url: `${process.env.NEXTAUTH_URL}/success`,
       },
     });
 
