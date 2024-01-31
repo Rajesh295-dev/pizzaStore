@@ -107,14 +107,14 @@ const OrdersPage = () => {
                 {item.products[0].title}
               </td>
               {session?.user.isAdmin ? (
-                <td>
+                <td className="md:mt-4 lg:mt-6">
                   <form
                     className="flex items-center justify-center gap-4"
                     onSubmit={(e) => handleUpdate(e, item.id)}
                   >
                     <input
                       placeholder={item.status}
-                      className="p-2  border-1 border-red-100 rounded-md outline-none"
+                      className="p-2  border border-red-100 rounded-md outline-none"
                     />
                     <button className="bg-red-400 p-2 rounded-full">
                       <Image src="/edit.png" alt="" width={20} height={20} />
@@ -127,7 +127,7 @@ const OrdersPage = () => {
               <td>
                 <button
                   onClick={() => handleDelete(item.id)}
-                  className="bg-red-400 p-2 rounded-full  "
+                  className="bg-red-400 p-3 ml-4 rounded-full  "
                 >
                   <Image src="/delete.png" alt="" width={20} height={20} />
                 </button>
