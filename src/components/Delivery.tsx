@@ -141,7 +141,7 @@ const Delivery: React.FC<DeliveryProps> = ({
               <span className="block text-gray-600">{label}</span>
               <input
                 type="text"
-                className="w-full ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+                className="w-full border border-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
                 value={addressInfo[label as keyof AddressInfo]}
                 onChange={(e) =>
                   handleAddressInfoChange(
@@ -159,7 +159,7 @@ const Delivery: React.FC<DeliveryProps> = ({
           Add Special Delivery Instruction
           <input
             type="text"
-            className="  ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+            className="  border border-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
             value={instructions}
             onChange={handleInstructionsChange}
             placeholder="e.g., contactless, call upon Arrival.."
@@ -215,7 +215,7 @@ const Delivery: React.FC<DeliveryProps> = ({
           <div className="w-1/3 flex flex-col gap-2 ">
             <span className="ml-2  text-green-600">Enter Different Amount</span>
             <input
-              className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+              className="border border-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
               type="text"
               placeholder="Enter amount"
               name="addamount"

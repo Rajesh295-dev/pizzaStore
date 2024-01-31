@@ -158,7 +158,7 @@ const AddCategory = () => {
         <div className="w-full flex flex-col gap-2 ">
           <label className="text-sm">Slug</label>
           <input
-            className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+            className="outline-none border border-red-200 p-4 rounded-sm placeholder:text-red-200 "
             type="text"
             placeholder="Bella Napoli"
             name="slug"
@@ -168,7 +168,7 @@ const AddCategory = () => {
         <div className="w-full flex flex-col gap-2 ">
           <label className="text-sm">Title</label>
           <input
-            className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+            className="outline-none border border-red-200 p-4 rounded-sm placeholder:text-red-200 "
             type="text"
             placeholder="Bella Napoli"
             name="title"
@@ -179,7 +179,7 @@ const AddCategory = () => {
           <label className="text-sm">Description</label>
           <textarea
             rows={3}
-            className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+            className="outline-none border border-red-200 p-4 rounded-sm placeholder:text-red-200 "
             placeholder="A timeless favorite with a twist, showcasing a thin crust topped with sweet tomatoes, fresh basil and creamy mozzarella."
             name="desc"
             onChange={handleChange}
@@ -192,7 +192,7 @@ const AddCategory = () => {
             name="color"
             value={inputs.color}
             onChange={handleChangeSlug}
-            className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+            className="outline-none border border-red-200 p-4 rounded-sm placeholder:text-red-200 "
           >
             {catColor.map((item, index) => (
               <option key={index}>{item}</option>

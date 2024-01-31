@@ -55,7 +55,7 @@ const Menu = () => {
                   Orders
                 </Link>
                 <span className="ml-4 cursor-pointer" onClick={() => signOut()}>
-                  Logout
+                  <Link href="/">Logout</Link>Logout
                 </span>
               </div>
             ) : (

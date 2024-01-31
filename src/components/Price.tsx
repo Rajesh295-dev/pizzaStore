@@ -277,7 +277,7 @@ const Price = ({ product }: { product: ProductType }) => {
           </label>
           <input
             type="text"
-            className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+            className="border border-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
             value={instructions}
             onChange={handleInstructionsChange}
             placeholder="add any instruction..."

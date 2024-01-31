@@ -88,8 +88,8 @@ const CashPay: React.FC<CashPayProps> = ({
   };
 
   return (
-    <div className="w-full h-full absolute  top-0 bottom-0 flex  bg-gray-400 bg-opacity-60">
-      <div className="  md:w-1/2 bg-white rounded-sm px-8 py-5  mt-9 md:m-2 flex flex-col items-center justify-center">
+    <div className="w-full h-full absolute  top-0 bottom-0 flex items-center justify-center bg-gray-400 bg-opacity-60">
+      <div className="  md:w-1/2 bg-white rounded-sm px-8 py-5   md:m-2 flex flex-col items-center justify-center">
         <button
           className="red-300  text-2xl  right-2 self-end"
           onClick={() => setCash(false)}
@@ -123,7 +123,7 @@ const CashPay: React.FC<CashPayProps> = ({
             pattern="[0-9]*"
             placeholder="+1 234 567 89"
             // className="h-10 ring-1 ring-red-200 p-4 rounded-sm"
-            className="h-10 outline-none p-4 rounded-sm border border-red-200"
+            className="h-10 outline-none border border-red-200 p-4 rounded-sm "
             onChange={handleChange}
           />
         </div>

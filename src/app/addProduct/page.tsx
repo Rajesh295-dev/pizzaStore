@@ -223,10 +223,11 @@ const AddPage = () => {
             />
           </div>
         )}
+
         <div className="w-full flex flex-col gap-2 ">
           <label className="text-sm">Title</label>
           <input
-            className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+            className="border border-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
             type="text"
             placeholder="Bella Napoli"
             name="title"
@@ -237,7 +238,7 @@ const AddPage = () => {
           <label className="text-sm">Description</label>
           <textarea
             rows={3}
-            className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+            className="border border-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
             placeholder="A timeless favorite with a twist, showcasing a thin crust topped with sweet tomatoes, fresh basil and creamy mozzarella."
             name="desc"
             onChange={handleChange}
@@ -246,7 +247,7 @@ const AddPage = () => {
         <div className="w-full flex flex-col gap-2 ">
           <label className="text-sm">Price</label>
           <input
-            className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+            className="border border-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
             type="number"
             placeholder="29"
             name="price"
@@ -262,7 +263,7 @@ const AddPage = () => {
               name="catSlug"
               value={inputs.catSlug}
               onChange={handleChangeSlug}
-              className="ring-1 ring-red-200 p-2 rounded-sm placeholder:text-red-200 outline-none"
+              className="border border-red-200 p-2 rounded-sm placeholder:text-red-200 outline-none"
             >
               {catList.map((item, index) => (
                 <option key={index} value={item}>
@@ -281,7 +282,7 @@ const AddPage = () => {
               inputs.isFeatured === null ? "" : inputs.isFeatured.toString()
             }
             onChange={handleChangeFeatured}
-            className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+            className="border border-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
           >
             <option value="true">True</option>
             <option value="false">False</option>
@@ -292,14 +293,14 @@ const AddPage = () => {
           <label className="text-sm">Options</label>
           <div className="flex flex-col md:flex-row gap-5">
             <input
-              className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+              className="border border-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
               type="text"
               placeholder="Title"
               name="title"
               onChange={changeOption}
             />
             <input
-              className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
+              className="border border-red-200 p-4 rounded-sm placeholder:text-red-200 outline-none"
               type="text"
               placeholder="Additional Price"
               name="additionalPrice"
