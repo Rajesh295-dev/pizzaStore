@@ -44,13 +44,14 @@ const Menu = () => {
               {item.title}
             </Link>
           ))}
+
           {user !== undefined && user !== null ? (
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-8">
               <Link href="/orders" onClick={() => setOpen(false)}>
                 Orders
               </Link>
 
-              <span className="ml-4 cursor-pointer" onClick={() => signOut()}>
+              <span className=" cursor-pointer" onClick={() => signOut()}>
                 Logout
               </span>
             </div>
@@ -59,15 +60,7 @@ const Menu = () => {
               Login
             </Link>
           )}
-          {/* {!user ? (
-            <Link href="login" onClick={() => setOpen(false)}>
-              Login
-            </Link>
-          ) : (
-            <Link href="/orders" onClick={() => setOpen(false)}>
-              Orders
-            </Link>
-          )} */}
+
           <div onClick={() => setOpen(false)}>
             <CartIcon />
           </div>
