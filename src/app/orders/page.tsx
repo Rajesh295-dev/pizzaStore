@@ -54,7 +54,7 @@ const OrdersPage = () => {
   };
 
   const handleDelete = async (id: string) => {
-    console.log(id);
+    // console.log(id);
 
     try {
       const res = await fetch(`${NEXTAUTH_URL}/api/orders/${id}`, {

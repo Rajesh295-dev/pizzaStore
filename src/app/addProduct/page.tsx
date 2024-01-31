@@ -27,6 +27,7 @@ type Option = {
   additionalPrice: number;
 };
 
+const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
 const AddPage = () => {
   const upload = async () => {
     const formData = new FormData();
@@ -47,7 +48,7 @@ const AddPage = () => {
   const onSubmit = async () => {
     try {
       const url = await upload();
-      const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products`, {
+      const res = await fetch(`${NEXTAUTH_URL}/api/products`, {
         method: "POST",
         body: JSON.stringify({
           img: url,
@@ -69,15 +70,12 @@ const AddPage = () => {
   // const [catList, setCatList] = useState<string[]>(["loading..."]);
   useEffect(() => {
     async function getCatSlug() {
-      const response = await fetch(
-        `${process.env.NEXTAUTH_URL}/api/categories`,
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch(`${NEXTAUTH_URL}/api/categories`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       const catSlug = await response.json();
       const slugTitles = catSlug.map(
         (category: { slug: string }) => category.slug

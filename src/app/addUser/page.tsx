@@ -16,6 +16,7 @@ type Inputs = {
   isAdmin: Boolean;
 };
 
+const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
 const AddUser = () => {
   const upload = async () => {
     const formData = new FormData();
@@ -32,7 +33,7 @@ const AddUser = () => {
   const onSubmit = async () => {
     try {
       const url = await upload();
-      const res = await fetch(`${process.env.NEXTAUTH_URL}/api/user`, {
+      const res = await fetch(`${NEXTAUTH_URL}/api/user`, {
         method: "POST",
         body: JSON.stringify({
           image: url,
@@ -58,7 +59,7 @@ const AddUser = () => {
   const [updateduser, setUpdatedUser] = useState(["loading..."]);
   useEffect(() => {
     async function getUserInfo() {
-      const response = await fetch(`${process.env.NEXTAUTH_URL}/api/user`, {
+      const response = await fetch(`${NEXTAUTH_URL}/api/user`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
