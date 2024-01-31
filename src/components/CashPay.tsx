@@ -16,8 +16,6 @@ interface CashPayProps {
   orderId: string;
 }
 
-const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
-
 const CashPay: React.FC<CashPayProps> = ({
   // Receive orderId as a prop
   setCash,
@@ -44,7 +42,7 @@ const CashPay: React.FC<CashPayProps> = ({
       setInputs(updatedInputs);
 
       const res = await fetch(
-        `${NEXTAUTH_URL}/api/cashPayment/${updatedInputs.newOrderId}`,
+        `${process.env.NEXTAUTH_URL}/api/cashPayment/${updatedInputs.newOrderId}`,
         {
           method: "POST",
           headers: {
@@ -91,7 +89,7 @@ const CashPay: React.FC<CashPayProps> = ({
 
   return (
     <div className="w-full h-full absolute  top-0 bottom-0 flex items-center justify-center bg-gray-400 bg-opacity-60">
-      <div className="  md:w-1/2 bg-white rounded-sm px-8 py-5 m-2 flex flex-col items-center justify-center">
+      <div className="  md:w-1/2 bg-white rounded-sm px-8 py-5 m-2 sm:mt-9 flex flex-col items-center justify-center">
         <button
           className="red-300  text-2xl  right-2 self-end"
           onClick={() => setCash(false)}

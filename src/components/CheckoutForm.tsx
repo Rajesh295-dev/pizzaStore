@@ -9,8 +9,6 @@ import {
 } from "@stripe/react-stripe-js";
 import AdressForm from "./AdressForm";
 
-//const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
-
 const CheckoutForm = () => {
   const stripe = useStripe();
   const elements = useElements();

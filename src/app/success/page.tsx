@@ -10,7 +10,6 @@ const SuccessPage = () => {
   const router = useRouter();
 
   // console.log("Search parameters:", searchParams.toString());
-  const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
 
   useEffect(() => {
     //conver this payment_intent into string before api request
@@ -20,9 +19,12 @@ const SuccessPage = () => {
 
     const makeRequest = async () => {
       try {
-        await fetch(`${NEXTAUTH_URL}/api/confirm/${payment_intent_str}`, {
-          method: "PUT",
-        });
+        await fetch(
+          `${process.env.NEXTAUTH_URL}/api/confirm/${payment_intent_str}`,
+          {
+            method: "PUT",
+          }
+        );
         router.push("/orders");
 
         setTimeout(() => {

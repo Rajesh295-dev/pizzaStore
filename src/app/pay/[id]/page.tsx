@@ -13,14 +13,16 @@ const PayPage = ({ params }: { params: { id: string } }) => {
   const [clientSecret, setClientSecret] = useState("");
 
   const { id } = params;
-  const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
 
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await fetch(`${NEXTAUTH_URL}/api/create-intent/${id}`, {
-          method: "POST",
-        });
+        const res = await fetch(
+          `${process.env.NEXTAUTH_URL}/api/create-intent/${id}`,
+          {
+            method: "POST",
+          }
+        );
         const data = await res.json();
         setClientSecret(data.clientSecret);
       } catch (err) {

@@ -6,8 +6,6 @@ import { useRouter } from "next/navigation";
 
 import { toast } from "react-toastify";
 
-const NEXTAUTH_URL = "https://slicespizzeria.vercel.app";
-
 const DeleteButton = ({ id }: { id: string }) => {
   const { data: session, status } = useSession();
   const router = useRouter();
@@ -20,7 +18,7 @@ const DeleteButton = ({ id }: { id: string }) => {
   }
 
   const handleDelete = async () => {
-    const res = await fetch(`${NEXTAUTH_URL}/api/products/${id}`, {
+    const res = await fetch(`${process.env.NEXTAUTH_URL}/api/products/${id}`, {
       method: "DELETE",
     });
     if (res.status === 200) {
