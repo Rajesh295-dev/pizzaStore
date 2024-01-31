@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import CartIcon from "./CartIcon";
 import UserProfileImg from "./UserprofileImg";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const links = [
   { id: 1, title: "Homepage", url: "/" },
@@ -16,7 +16,9 @@ const links = [
 
 const Menu = () => {
   const [open, setOpen] = useState(false);
-  const user = false;
+  // const user = false;
+  const user = useSession();
+
   return (
     <div>
       {!open ? (
@@ -62,22 +64,6 @@ const Menu = () => {
               </Link>
             )}
           </div>
-
-          {/* {user !== undefined && user !== null ? (
-            <div className="flex flex-col gap-8">
-              <Link href="/orders" onClick={() => setOpen(false)}>
-                Orders
-              </Link>
-
-              <span className=" cursor-pointer" onClick={() => signOut()}>
-                Logout
-              </span>
-            </div>
-          ) : (
-            <Link href="login" onClick={() => setOpen(false)}>
-              Login
-            </Link>
-          )} */}
 
           <div onClick={() => setOpen(false)}>
             <CartIcon />

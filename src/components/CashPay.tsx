@@ -107,7 +107,8 @@ const CashPay: React.FC<CashPayProps> = ({
             value={inputs.customer}
             placeholder="Michael Josep"
             type="text"
-            className="h-10 ring-1 ring-red-200 p-4 rounded-sm"
+            // className="h-10 ring-1 ring-red-200 p-4 rounded-sm"
+            className="h-10 outline-none p-4 rounded-sm border border-red-200"
             onChange={handleChange}
           />
         </div>
@@ -121,7 +122,8 @@ const CashPay: React.FC<CashPayProps> = ({
             maxLength={14}
             pattern="[0-9]*"
             placeholder="+1 234 567 89"
-            className="h-10 ring-1 ring-red-200 p-4 rounded-sm"
+            // className="h-10 ring-1 ring-red-200 p-4 rounded-sm"
+            className="h-10 outline-none p-4 rounded-sm border border-red-200"
             onChange={handleChange}
           />
         </div>
@@ -134,7 +136,7 @@ const CashPay: React.FC<CashPayProps> = ({
             rows={2}
             placeholder="549 Baltimore Pike"
             // type="text"
-            className="ring-1 ring-red-200 p-4 rounded-sm placeholder:text-red-200 outline-non"
+            className=" outline-none border border-red-200 p-4 rounded-sm placeholder:text-red-200 "
             onChange={handleChange}
           />
         </div>
