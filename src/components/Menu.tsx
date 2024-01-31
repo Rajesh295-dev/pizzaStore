@@ -17,7 +17,8 @@ const links = [
 const Menu = () => {
   const [open, setOpen] = useState(false);
   // const user = false;
-  const user = useSession();
+  // const user = useSession();
+  const { status } = useSession();
 
   return (
     <div>
@@ -48,6 +49,19 @@ const Menu = () => {
           ))}
 
           <div>
+            {status === "authenticated" ? (
+              <div>
+                <Link href="/orders">Orders</Link>
+                <span className="ml-4 cursor-pointer" onClick={() => signOut()}>
+                  Logout
+                </span>
+              </div>
+            ) : (
+              <Link href="/login">Login</Link>
+            )}
+          </div>
+
+          {/* <div>
             {user ? (
               <div className="flex flex-col gap-8">
                 <Link href="/orders" onClick={() => setOpen(false)}>
@@ -63,7 +77,7 @@ const Menu = () => {
                 Login
               </Link>
             )}
-          </div>
+          </div> */}
 
           <div onClick={() => setOpen(false)}>
             <CartIcon />
