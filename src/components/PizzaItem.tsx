@@ -30,7 +30,7 @@ const PizzaItem: React.FC<PizzaItemProps> = ({ item }) => (
           <h2 className="text-xl uppercase p-2 text-red-500">
             Customize your pizza with your choice of toppings
           </h2>
-          <button className="uppercase text-xl bg-red-500 text-white p-2 rounded-md">
+          <button className="uppercase mt-5 text-lg md:text-xl bg-green-500 text-white p-2 rounded-md">
             Lets make it!
           </button>
         </>

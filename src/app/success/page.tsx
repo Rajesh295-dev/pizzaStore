@@ -29,7 +29,7 @@ const SuccessPage = () => {
 
         setTimeout(() => {
           router.push("/orders");
-        }, 3000);
+        }, 5000);
       } catch (err) {
         console.log(err);
       }

@@ -143,7 +143,7 @@ const OrdersPage = () => {
                   onClick={() => handleDelete(item.id)}
                   className="bg-red-400 ml-3 p-3 rounded-full"
                 >
-                  <Image src="/delete.png" alt="" width={10} height={10} />
+                  <Image src="/delete.png" alt="" width={15} height={15} />
                 </button>
               </td>
             </tr>
