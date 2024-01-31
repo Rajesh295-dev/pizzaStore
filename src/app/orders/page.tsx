@@ -81,7 +81,6 @@ const OrdersPage = () => {
   );
 
   useEffect(() => {
-    message;
     const timeoutId = setTimeout(() => {
       setMessage("Here is the status of your order!");
     }, 60000); // 60,000 milliseconds = 1 minute
