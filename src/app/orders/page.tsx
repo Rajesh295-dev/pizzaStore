@@ -6,7 +6,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 const OrdersPage = () => {
@@ -76,8 +76,22 @@ const OrdersPage = () => {
 
   //add handleDelete function for item.id
 
+  const [message, setMessage] = useState(
+    "Your order has been placed Successfully!"
+  );
+
+  useEffect(() => {
+    message;
+    const timeoutId = setTimeout(() => {
+      setMessage("Here is the status of your order!");
+    }, 60000); // 60,000 milliseconds = 1 minute
+
+    // Clean up the timeout to avoid memory leaks
+    return () => clearTimeout(timeoutId);
+  }, []); // Run this effect only once when the component mounts
+
   return (
-    <div className="p-4 lg:px-20 xl:px-40">
+    <div className="p-4 lg:px-20 xl:px-40 overflow-x-auto">
       <div className="h-12 bg-green-500 text-white px-4 flex items-center justify-center text-sm md:text-base cursor-pointer">
         Your order has been placed Successfully!
       </div>
@@ -107,7 +121,7 @@ const OrdersPage = () => {
                 {item.products[0].title}
               </td>
               {session?.user.isAdmin ? (
-                <td className="md:mt-4 lg:mt-6">
+                <td>
                   <form
                     className="flex items-center justify-center gap-4"
                     onSubmit={(e) => handleUpdate(e, item.id)}
@@ -124,10 +138,10 @@ const OrdersPage = () => {
               ) : (
                 <td className="py-6 px-1">{item.status}</td>
               )}
-              <td>
+              <td className="flex items-center justify-center">
                 <button
                   onClick={() => handleDelete(item.id)}
-                  className="bg-red-400 flex items-center justify-center rounded-full  "
+                  className="bg-red-400 rounded-full"
                 >
                   <Image src="/delete.png" alt="" width={20} height={20} />
                 </button>
