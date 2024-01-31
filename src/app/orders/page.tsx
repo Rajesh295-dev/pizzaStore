@@ -10,6 +10,19 @@ import React, { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 const OrdersPage = () => {
+  const [message, setMessage] = useState(
+    "Your order has been placed Successfully!"
+  );
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setMessage("Here is the status of your order!");
+    }, 60000); // 60,000 milliseconds = 1 minute
+
+    // Clean up the timeout to avoid memory leaks
+    return () => clearTimeout(timeoutId);
+  }, []); // Run this effect only once when the component mounts
+
   const { data: session, status } = useSession();
 
   const router = useRouter();
@@ -75,19 +88,6 @@ const OrdersPage = () => {
   if (isLoading || status === "loading") return "Loading...";
 
   //add handleDelete function for item.id
-
-  const [message, setMessage] = useState(
-    "Your order has been placed Successfully!"
-  );
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setMessage("Here is the status of your order!");
-    }, 60000); // 60,000 milliseconds = 1 minute
-
-    // Clean up the timeout to avoid memory leaks
-    return () => clearTimeout(timeoutId);
-  }, []); // Run this effect only once when the component mounts
 
   return (
     <div className="p-4 lg:px-20 xl:px-40 overflow-x-auto">
