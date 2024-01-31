@@ -51,13 +51,17 @@ const Menu = () => {
           <div>
             {status === "authenticated" ? (
               <div>
-                <Link href="/orders">Orders</Link>
+                <Link href="/orders" onClick={() => setOpen(false)}>
+                  Orders
+                </Link>
                 <span className="ml-4 cursor-pointer" onClick={() => signOut()}>
                   Logout
                 </span>
               </div>
             ) : (
-              <Link href="/login">Login</Link>
+              <Link href="/login" onClick={() => setOpen(false)}>
+                Login
+              </Link>
             )}
           </div>
 
