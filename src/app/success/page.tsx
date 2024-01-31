@@ -25,11 +25,11 @@ const SuccessPage = () => {
             method: "PUT",
           }
         );
-        router.push("/orders");
+        // router.push("/orders");
 
         setTimeout(() => {
           router.push("/orders");
-        }, 5000);
+        }, 3000);
       } catch (err) {
         console.log(err);
       }
