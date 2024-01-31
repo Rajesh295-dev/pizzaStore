@@ -40,7 +40,7 @@ const CashPay: React.FC<CashPayProps> = ({
         newOrderId: orderId,
       };
 
-      console.log("updated inputs", updatedInputs);
+      // console.log("updated inputs", updatedInputs);
       setInputs(updatedInputs);
 
       const res = await fetch(
@@ -59,7 +59,7 @@ const CashPay: React.FC<CashPayProps> = ({
 
       if (res.ok) {
         const updatedOrder = await res.json();
-        console.log("Entire API Response:", updatedOrder);
+        // console.log("Entire API Response:", updatedOrder);
         const updatedIntentId = updatedOrder.intent_id;
         router.push(`/success?payment_intent=${updatedIntentId}`);
       } else {

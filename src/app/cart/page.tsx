@@ -44,7 +44,7 @@ const CartPage = () => {
 
         if (res.ok) {
           const data = await res.json();
-          console.log("new order id", data.id);
+          // console.log("new order id", data.id);
 
           if (data.method === "card") {
             router.push(`pay/${data.id}`);

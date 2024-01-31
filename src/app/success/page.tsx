@@ -25,9 +25,9 @@ const SuccessPage = () => {
         });
         router.push("/orders");
 
-        // setTimeout(() => {
-        //   router.push("/orders");
-        // }, 1000);
+        setTimeout(() => {
+          router.push("/orders");
+        }, 1000);
       } catch (err) {
         console.log(err);
       }
