@@ -1,5 +1,6 @@
 "use client";
 
+// import relevent files
 import AdminBoard from "@/components/AdminBoard";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
